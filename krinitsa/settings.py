@@ -31,30 +31,31 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin', # админка для управления сайтом
-    'django.contrib.auth', # механизм авторизации
-    'django.contrib.contenttypes', # полиморфные связи в БД, управления майнтипами
-    'django.contrib.sessions', # управление сессиями на сайте
-    'django.contrib.messages', # сообщения клиенту
-    'django.contrib.staticfiles', # содержит функции для отправки статических файлов
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'users.apps.UserConfig',
 ]
-# промежуточное ПО, взаимодейские клиент-MIDDLEWARE-сервер
+
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware', # проверка безопасности
-    'django.contrib.sessions.middleware.SessionMiddleware', # обработка сессии
-    'django.middleware.common.CommonMiddleware', # общие операции: парсинг, конвертация и т.д.
-    'django.middleware.csrf.CsrfViewMiddleware', # блокирует атаки
-    'django.contrib.auth.middleware.AuthenticationMiddleware', # Авторизация
-    'django.contrib.messages.middleware.MessageMiddleware', # отправка сообщений
-    'django.middleware.clickjacking.XFrameOptionsMiddleware', # запрещает от атак кражи кликов
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# настройка указывает где искать массив url-партернс
+
 ROOT_URLCONF = 'krinitsa.urls'
-# указывает где искать шаблоны для вью
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +73,7 @@ WSGI_APPLICATION = 'krinitsa.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-# указываются все БД с которыми работаем
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -101,6 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -120,3 +122,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    'var/www/static',
+]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'media'
