@@ -1,15 +1,19 @@
 from django.db import models
 
 
-class Storage(models.Model):
+class Warehouse(models.Model):
     name = models.CharField(
         max_length=50
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Volume(models.Model):
     name = models.CharField(
-        max_length=30
+        max_length=30,
+        unique=True
     )
     gross_weight = models.PositiveSmallIntegerField(
 
@@ -21,9 +25,33 @@ class Volume(models.Model):
 
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(
-        max_length=30
+        max_length=30,
+        unique=True
     )
 
+    def __str__(self):
+        return self.name
+
+
+class Balance(models.Model):
+    warehouse = models.ForeignKey(
+        Warehouse,
+        on_delete=models.DO_NOTHING
+    )
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.DO_NOTHING
+    )
+    volume = models.ForeignKey(
+        Volume,
+        on_delete=models.DO_NOTHING
+    )
+    amount = models.FloatField(
+
+    )

@@ -1,3 +1,4 @@
+from krinitsa.utils import ROLES
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
@@ -7,9 +8,13 @@ class User(AbstractUser):
         max_length=10,
         null=True
     )
+    role = models.CharField(
+        max_length=50,
+        choices=ROLES
+    )
 
     class Meta:
-        ordering = ['username', 'email']
+        ordering = ['username', 'date_joined']
 
 
 class Avatar(models.Model):

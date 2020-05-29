@@ -29,17 +29,17 @@ class Bank_account(models.Model):
     )
     currency = models.ForeignKey(
         Currency,
-        on_delete=models.PROTECT
+        on_delete=models.DO_NOTHING
     )
     bank = models.ForeignKey(
         Bank,
-        on_delete=models.PROTECT
+        on_delete=models.DO_NOTHING
     )
     start = models.DateField(
-        auto_now_add=True
+        auto_now=True
     )
     end = models.DateField(
-        null=True
+        blank=True
     )
 
 
@@ -48,7 +48,6 @@ class Company(models.Model):
         max_length=200
     )
     upn = models.PositiveIntegerField(
-        max_length=9,
         unique=True
     )
     address = models.CharField(
@@ -56,10 +55,12 @@ class Company(models.Model):
     )
     bank_account = models.ForeignKey(
         Bank_account,
+        related_name='accounts',
         on_delete=models.CASCADE
     )
     email = models.EmailField(
-        max_length=250
+        max_length=250,
+        blank=True
     )
 
 
@@ -71,10 +72,10 @@ class Contract(models.Model):
         max_length=30
     )
     start = models.DateField(
-        auto_now_add=True
+        auto_now=True
     )
     end = models.DateField(
-        null=True
+        blank=True
     )
     due_date_payment = models.PositiveSmallIntegerField(
         default=45
@@ -86,10 +87,11 @@ class Contact_person(models.Model):
         max_length=60
     )
     last_name = models.CharField(
-        max_length=30, null=True
+        max_length=30,
+        blank=True
     )
     birthday = models.DateField(
-        null=True
+        blank=True
     )
 
 
@@ -99,9 +101,11 @@ class Outlet(models.Model):
     )
     company = models.ForeignKey(
         Company,
-        on_delete=models.CASCADE)
-    contact = models.ManyToManyField(
-        Contact_person
+        on_delete=models.CASCADE
+    )
+    contact = models.ForeignKey(
+        Contact_person,
+        on_delete=models.CASCADE
     )
     address = models.CharField(
         max_length=350
@@ -110,9 +114,10 @@ class Outlet(models.Model):
         max_length=10
     )
     email = models.EmailField(
-        max_length=250
+        max_length=250,
+        blank=True
     )
     service_area = models.ForeignKey(
         Service_area,
-        on_delete=models.PROTECT
+        on_delete=models.DO_NOTHING,
     )

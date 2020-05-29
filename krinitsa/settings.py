@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'SECRET'
+SECRET_KEY = '8pq-6)!5j)i9enr(!7ii^m=e_wnhn%n2tf&bysqw1sxhm5-s$b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,9 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UserConfig',
-    'companies.apps.CompaniesConfig',
     'sales.apps.SalesConfig',
+    'companies.apps.CompaniesConfig',
     'goods.apps.GoodsConfig',
+    'events.apps.EventsConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'crm_krinitsa',
         'USER': 'postgres',
-        'PASSWORD': '***'
+        'PASSWORD': 'password'
     }
 }
 

@@ -1,0 +1,55 @@
+.custom-skin{
+  display: block;
+  background-color: #fcf5f5;
+  margin: auto;
+}
+
+.head{
+  color: #574c4c;
+  font-family: Tahoma, sans-serif;
+  font-size: 13pt;
+  position: relative;
+  margin: 0 auto;
+  width: 350px;
+  padding: 15px;
+}
+
+.auth{
+  display: block;
+  padding-top: 20px;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 25px;
+  height: 50px;
+  border-radius: 5px;
+  outline: 0;
+}
+
+.auth-button{
+}
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.field-login{
+  margin: 5px;
+}
+
+.bottom{
+}
+
+
+header {
+  display: block;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  font-size: 18px;
+  font-family: 'Work Sans', sans-serif;
+
+
+}

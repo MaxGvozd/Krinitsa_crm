@@ -1,0 +1,177 @@
+body{
+	background:#fcf5f5;
+	margin:0;
+	font-family:"Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+	color:#ffea92;
+	padding-left: 240px;
+}
+
+main{
+	position:relative;
+	height:100vh;
+}
+
+.helper{
+		background:rgba(0,0,0,0.2);
+		color:#821c1a;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate3d(-50%,-50%,0);
+		padding:1.2em 2em;
+		text-align:center;
+		border-radius:20px;
+		font-size:2em;
+		font-weight:bold;
+}
+
+ul>a{
+	text-decoration: none;
+}
+
+span{
+	color:#ffffff;
+	font-size:0.4em;
+	display:block;
+  padding-top: 40px;
+}
+
+.text {
+  color:#000000;
+  font-size:0.4em;
+  display:block;
+  padding-top: 40px;
+}
+
+.menu{
+	background:#821c1a;
+	height:auto;
+	width:240px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:10;
+	outline:inherit;
+}
+.avatar{
+  background:rgba(0,0,0,0.1);
+	padding:2em 0.5em;
+	text-align:center;
+}
+
+img{
+	width:100px;
+	border-radius:50%;
+	overflow:hidden;
+	border:4px solid #ffea92;
+	box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+}
+
+h2{
+	font-weight:normal;
+	margin-bottom:0;
+}
+
+ul{
+		list-style:none;
+		padding:0.1em 0;
+		margin:0;
+}
+
+.icon-dashboard{
+	padding:0em 0em 1em 1em;
+	font-size:2.5em;
+	font-weight: bold;
+	background-repeat:no-repeat;
+	background-position:left 5px center;
+	background-size:auto 20px;
+	transition:all 0.15s linear;
+	cursor:pointer;
+  background-image:url("http://www.entypo.com/images/gauge.svg");
+}
+
+.icon-dashboard:hover{
+  background-color:rgba(0,0,0,0.1);
+}
+
+.icon-dashboard:focus{
+  outline:none;
+}
+
+.icon-customers{
+    padding:0em 0em 1em 1em;;
+    font-size:2.5em;
+    font-weight: bold;
+    background-repeat:no-repeat;
+    background-position:left 5px center;
+    background-size:auto 20px;
+    transition:all 0.15s linear;
+    cursor:pointer;
+    background-image:url("http://www.entypo.com/images/briefcase.svg");
+}
+
+.icon-customers:hover{
+  background-color:rgba(0,0,0,0.1);
+}
+
+.icon-customers:focus{
+  outline:none;
+}
+
+.icon-users{
+  padding:0em 0em 1em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("http://www.entypo.com/images/users.svg");
+}
+.icon-users:hover{
+  background-color:rgba(0,0,0,0.1);
+}
+
+.icon-users:focus{
+  outline:none;
+}
+
+.icon-settings{
+  padding:0em 0em 1em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("http://www.entypo.com/images/tools.svg");
+}
+
+.icon-settings:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-settings:focus{
+	outline:none;
+}
+.icon-settingss{
+  padding:0em 0em 1em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("http://www.entypo.com/images/users.svg");
+}
+
+.icon-settingss:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-settingss:focus{
+	outline:none;
+}

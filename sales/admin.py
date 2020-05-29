@@ -1,3 +1,4 @@
 from django.contrib import admin
+from sales.models import Service_area
 
-# Register your models here.
+admin.site.register(Service_area)
