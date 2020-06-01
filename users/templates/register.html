@@ -1,0 +1,20 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Create user
+{% endblock %}
+
+{% block app %}
+    Создание пользователя
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <form method="POST" action="/register/">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input style="width: 100%;margin-top:10px;" type="submit" value="Создать">
+        </form>
+    </span>
+{% endblock %}

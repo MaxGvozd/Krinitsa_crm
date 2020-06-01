@@ -33,19 +33,41 @@ span{
 	color:#ffffff;
 	font-size:0.4em;
 	display:block;
-  padding-top: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .text {
   color:#000000;
-  font-size:0.4em;
+  font-size:0.45em;
   display:block;
   padding-top: 40px;
+}
+form{
+  text-align: left;
+}
+
+form input{
+  width: 100%;
+}
+
+select{
+  width: 100%;
+}
+
+.helptext{
+  font-size:8px;
+  color: gray;
+}
+
+.errorlist{
+  color:red;
+  font-size:80%;
 }
 
 .menu{
 	background:#821c1a;
-	height:auto;
+	height:100%;
 	width:240px;
 	position:absolute;
 	top:0;
@@ -78,48 +100,8 @@ ul{
 		margin:0;
 }
 
-.icon-dashboard{
-	padding:0em 0em 1em 1em;
-	font-size:2.5em;
-	font-weight: bold;
-	background-repeat:no-repeat;
-	background-position:left 5px center;
-	background-size:auto 20px;
-	transition:all 0.15s linear;
-	cursor:pointer;
-  background-image:url("http://www.entypo.com/images/gauge.svg");
-}
-
-.icon-dashboard:hover{
-  background-color:rgba(0,0,0,0.1);
-}
-
-.icon-dashboard:focus{
-  outline:none;
-}
-
-.icon-customers{
-    padding:0em 0em 1em 1em;;
-    font-size:2.5em;
-    font-weight: bold;
-    background-repeat:no-repeat;
-    background-position:left 5px center;
-    background-size:auto 20px;
-    transition:all 0.15s linear;
-    cursor:pointer;
-    background-image:url("http://www.entypo.com/images/briefcase.svg");
-}
-
-.icon-customers:hover{
-  background-color:rgba(0,0,0,0.1);
-}
-
-.icon-customers:focus{
-  outline:none;
-}
-
-.icon-users{
-  padding:0em 0em 1em 1em;;
+.icon-banks{
+  padding:0em 0em 0em 1em;
   font-size:2.5em;
   font-weight: bold;
   background-repeat:no-repeat;
@@ -127,7 +109,47 @@ ul{
   background-size:auto 20px;
   transition:all 0.15s linear;
   cursor:pointer;
-  background-image:url("http://www.entypo.com/images/users.svg");
+  background-image:url("./img/classic-computer.svg");
+}
+
+.icon-banks:hover{
+  background-color:rgba(0,0,0,0.1);
+}
+
+.icon-banks:focus{
+  outline:none;
+}
+
+.icon-warehouse{
+    padding:0em 0em 0em 1em;;
+    font-size:2.5em;
+    font-weight: bold;
+    background-repeat:no-repeat;
+    background-position:left 5px center;
+    background-size:auto 20px;
+    transition:all 0.15s linear;
+    cursor:pointer;
+    background-image:url("./img/layers.svg");
+}
+
+.icon-warehouse:hover{
+  background-color:rgba(0,0,0,0.1);
+}
+
+.icon-warehouse:focus{
+  outline:none;
+}
+
+.icon-users{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/users.svg");
 }
 .icon-users:hover{
   background-color:rgba(0,0,0,0.1);
@@ -137,8 +159,8 @@ ul{
   outline:none;
 }
 
-.icon-settings{
-  padding:0em 0em 1em 1em;;
+.icon-currency{
+  padding:0em 0em 0em 1em;;
   font-size:2.5em;
   font-weight: bold;
   background-repeat:no-repeat;
@@ -146,18 +168,19 @@ ul{
   background-size:auto 20px;
   transition:all 0.15s linear;
   cursor:pointer;
-  background-image:url("http://www.entypo.com/images/tools.svg");
+  background-image:url("./img/wallet.svg");
 }
 
-.icon-settings:hover{
+.icon-currency:hover{
 	background-color:rgba(0,0,0,0.1);
 }
 
-.icon-settings:focus{
+.icon-currency:focus{
 	outline:none;
 }
-.icon-settingss{
-  padding:0em 0em 1em 1em;;
+
+.icon-product{
+  padding:0em 0em 0em 1em;;
   font-size:2.5em;
   font-weight: bold;
   background-repeat:no-repeat;
@@ -165,13 +188,173 @@ ul{
   background-size:auto 20px;
   transition:all 0.15s linear;
   cursor:pointer;
-  background-image:url("http://www.entypo.com/images/users.svg");
+  background-image:url("./img/colours.svg");
 }
 
-.icon-settingss:hover{
+.icon-product:hover{
 	background-color:rgba(0,0,0,0.1);
 }
 
-.icon-settingss:focus{
+.icon-product:focus{
+	outline:none;
+}
+
+.icon-volume{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/volume.svg");
+}
+
+.icon-volume:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-volume:focus{
+	outline:none;
+}
+
+.icon-area{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/briefcase.svg");
+}
+
+.icon-area:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-area:focus{
+	outline:none;
+}
+
+.icon-companies{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/archive.svg");
+}
+
+.icon-companies:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-companies:focus{
+	outline:none;
+}
+
+.icon-contracts{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/text-document.svg");
+}
+
+.icon-contracts:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-contracts:focus{
+	outline:none;
+}
+
+.icon-outlets{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/shop.svg");
+}
+
+.icon-outlets:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-outlets:focus{
+	outline:none;
+}
+
+.icon-contacts{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/add-user.svg");
+}
+
+.icon-contacts:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-contacts:focus{
+	outline:none;
+}
+
+.icon-sale{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/shopping-cart.svg");
+}
+
+.icon-sale:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-sale:focus{
+	outline:none;
+}
+
+.icon-logout{
+  padding:0em 0em 0em 1em;;
+  font-size:2.5em;
+  font-weight: bold;
+  background-repeat:no-repeat;
+  background-position:left 5px center;
+  background-size:auto 20px;
+  transition:all 0.15s linear;
+  cursor:pointer;
+  background-image:url("./img/log-out.svg");
+}
+
+.icon-logout:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.icon-logout:focus{
 	outline:none;
 }

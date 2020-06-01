@@ -1,0 +1,20 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Create volume
+{% endblock %}
+
+{% block app %}
+    Создание виды объёма
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <form method="post" action="/goods/create/volume/">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input style="width: 100%;margin-top:10px;" type="submit" value="Создать">
+        </form>
+    </span>
+{% endblock %}

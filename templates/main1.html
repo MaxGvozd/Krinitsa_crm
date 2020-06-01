@@ -10,7 +10,12 @@
             name="application-name" content="CRM Crinitsa"
             name="author" content="Max Gvozd"
     >
-    <title>CRM Криница</title>
+
+    <title>
+        {% block title %}
+            CRM Криница
+        {% endblock %}
+    </title>
     <link
             rel="icon"
             href="{% static 'img/favicon.ico' %}"
@@ -26,39 +31,52 @@
 <nav class="menu" tabindex="0">
     <header class="avatar">
         {% if user.avatars.latest.image %}
-        <img src="{{ user.avatars.latest.image.url }}"/>
+            <img src="{{ user.avatars.latest.image.url }}"/>
         {% else %}
-        <img src="{% static 'img/Logo_Kriniza.jpg' %}"/>
+            <img src="{% static 'img/Logo_Kriniza.jpg' %}"/>
         {% endif %}
         <h2>{{user.first_name}} {{ user.last_name }}</h2>
     </header>
     <ul>
         {% if user.role == 'ADMIN' %}
-        <a href="/register"><li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-customers"><span>Customers</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-users"><span>Users</span></li></a></a>
-        <a href="/register"><li tabindex="0" class="icon-settings"><span>Settings</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-settingss"><span>Settingss</span></li></a>
+            <a href="/register"><li tabindex="0" class="icon-users"><span>Пользователи</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-banks"><span>Банки</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-currency"><span>Валюты</span></li></a>
+            <a href="/goods"><li tabindex="0" class="icon-warehouse"><span>Склады</span></li></a>
+            <a href="/goods"><li tabindex="0" class="icon-product"><span>Номенклатура</span></li></a>
+            <a href="/goods"><li tabindex="0" class="icon-volume"><span>Виды объёма</span></li></a>
+            <a href="/logout"><li tabindex="0" class="icon-logout"><span>Выйти</span></li></a>
         {% elif user.role == 'LEAD' %}
-        <a href="/register"><li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-customers"><span>Customers</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-users"><span>Users</span></li></a></a>
-        <a href="/register"><li tabindex="0" class="icon-settings"><span>Settings</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-settingss"><span>Settingss</span></li></a>
+            <a href="/register"><li tabindex="0" class="icon-users"><span>Сотрудники</span></li></a>
+            <a href="/area"><li tabindex="0" class="icon-area"><span>Зоны обслуживания</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-companies"><span>Контрагенты</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-contracts"><span>Договора</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-outlets"><span>Торговые точки</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-contacts"><span>Контактные лица</span></li></a>
+            <a href="/logout"><li tabindex="0" class="icon-logout"><span>Выйти</span></li></a>
         {% else %}
-        <a href="/register"><li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-customers"><span>Customers</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-users"><span>Users</span></li></a></a>
-        <a href="/register"><li tabindex="0" class="icon-settings"><span>Settings</span></li></a>
-        <a href="/register"><li tabindex="0" class="icon-settingss"><span>Settingss</span></li></a>
+            <a href="/sale"><li tabindex="0" class="icon-sale"><span>Продажа</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-companies"><span>Контрагенты</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-outlets"><span>Торговые точки</span></li></a>
+            <a href="/companies"><li tabindex="0" class="icon-users"><span>Контактные лица</span></li></a>
+            <a href="/logout"><li tabindex="0" class="icon-logout"><span>Выйти</span></li></a>
         {% endif %}
     </ul>
 </nav>
-
 <main>
     <div class="helper">
-        RESIZE THE WINDOW
-        <span class="text">Breakpoints on 900px and 400px</span>
+        {% block app %}
+
+            Криница CRM
+
+        {% endblock %}
+            {% block content %}
+                <span class="text">
+
+                    Breakpoints on 900px and 400px
+
+                </span>
+            {% endblock %}
     </div>
 </main>
 </body>

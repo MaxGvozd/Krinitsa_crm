@@ -1,0 +1,20 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Create bank
+{% endblock %}
+
+{% block app %}
+    Добавление банка
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <form method="post" action="/company/create/bank/">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input style="width: 100%;margin-top:10px;" type="submit" value="Создать">
+        </form>
+    </span>
+{% endblock %}

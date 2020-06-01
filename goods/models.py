@@ -3,7 +3,8 @@ from django.db import models
 
 class Warehouse(models.Model):
     name = models.CharField(
-        max_length=50
+        max_length=50,
+        unique=True
     )
 
     def __str__(self):
@@ -31,12 +32,17 @@ class Volume(models.Model):
 
 class Product(models.Model):
     name = models.CharField(
-        max_length=30,
-        unique=True
+        max_length=30
+    )
+    volume = models.ForeignKey(
+        Volume,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True
     )
 
     def __str__(self):
-        return self.name
+        return self.name + " " + self.volume.name
 
 
 class Balance(models.Model):
@@ -53,5 +59,4 @@ class Balance(models.Model):
         on_delete=models.DO_NOTHING
     )
     amount = models.FloatField(
-
     )

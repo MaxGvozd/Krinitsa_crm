@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CRM Криница</title>
+		<link rel="icon" href="{% static 'img/Gerb-01.ico' %}" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	</head>
+<body>
+<div class="logo">
+	<img src="{% static 'img/Logo+Gerb_безфона_word-01.png' %}" width="330" height="250">
+</div>
+<div class="container" id='app'>
+  <div class="note note--down"><p></p></div>
+  <div class="login">
+    <header class="login--header">
+      <span>Log In</span>
+    </header>
+    <section class="login--section">
+      <form method="post" class='login--form'>
+        <fieldset>
+          <input name="username" type="text" placeholder='username' required  />
+          <svg viewbox='0 0 100 1' class='line'>
+            <path class='line--default' d='M0 0 L100 0'></path>
+          </svg>
+        </fieldset>
+        <fieldset>
+            {% csrf_token %}
+          <input name="password" type="password" placeholder='password' required />
+          <svg viewbox='0 0 100 1' class='line'>
+            <path class='line--default' d='M0 0 L100 0'></path>
+          </svg>
+        </fieldset>
+        <fieldset>
+            {% if error %}
+            <p style="color: red; font-size: 13px; font-family: 'Source Sans Pro', sans-serif;">Неверный пароль или такого пользователя не существует!</p>
+            {% endif %}
+            <button type='submit' class='btn'>Login</button>
+            <!--<a href="/login"></a>-->
+        </fieldset>
+      </form>
+    </section>
+  </div>
+</div>
+</body>
+</html>

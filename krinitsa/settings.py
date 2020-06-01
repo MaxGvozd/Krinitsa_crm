@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8pq-6)!5j)i9enr(!7ii^m=e_wnhn%n2tf&bysqw1sxhm5-s$b'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'krinitsa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'crm_krinitsa',
-        'USER': 'postgres',
-        'PASSWORD': 'password'
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER': os.environ['DATABASE_USR'],
+        'PASSWORD': os.environ['DATABASE_PWD']
     }
 }
 
