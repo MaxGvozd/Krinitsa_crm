@@ -9,7 +9,7 @@ from django.views.decorators.http import require_GET
 @require_GET
 def accounts(request):
     query = request.GET.get("q", "")
-    accounts_list = Bank_account.objects.filter(Q(bank__icontains=query))
+    accounts_list = Bank_account.objects.filter(Q(number__icontains=query))
     return render(request, 'accounts_list.html', context={
         "accounts_list": accounts_list
     })
