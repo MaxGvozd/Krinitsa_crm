@@ -1,0 +1,32 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Volume
+{% endblock %}
+
+{% block app %}
+    Виды объёма
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr style="color: Red;">
+                <th>Наименование</th>
+                <th>Масса брутто</th>
+                <th>Масса нетто</th>
+                <th>Количество в месте</th>
+            </tr>
+        {% for volume in volume_list %}
+            <tr>
+                <td>{{ volume.name }}</td>
+                <td>{{ volume.gross_weight }}</td>
+                <td>{{ volume.net_weight }}</td>
+                <td>{{ volume.in_packaging }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

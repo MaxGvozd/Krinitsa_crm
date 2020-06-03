@@ -4,15 +4,37 @@
     Users
 {% endblock %}
 
+{% block search %}
+        "/users"
+{% endblock %}
+
 {% block app %}
     Пользователи системы
 {% endblock %}
 
 {% block content %}
     <span class="text">
-        <form method="POST" action="/register/">
-
-
-        </form>
+        <p style="text-align: left;" ><a href="/register">Добавить</a></p>
+        <br>
+        <table>
+            <tr style="color: Red;">
+                <th>Username</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Статус</th>
+                <th>Телефон</th>
+                <th>Email</th>
+            </tr>
+        {% for user in users_list %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.role }}</td>
+                <td>{{ user.telephone }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        {% endfor %}
+        </table>
     </span>
 {% endblock %}

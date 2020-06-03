@@ -22,9 +22,8 @@ from krinitsa import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
-    path('area/', include('sales.urls')),
-    path('goods/', include('goods.urls')),
-    path('events/', include('events.urls')),
-    path('company/', include('companies.urls')),
+    path('', include('goods.urls')),
+    path('', include('events.urls')),
+    path('', include('companies.urls')),
     path('', views.main)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

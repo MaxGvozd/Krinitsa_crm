@@ -4,17 +4,23 @@
     Create product
 {% endblock %}
 
+
+{% block search %}
+        "/products"
+{% endblock %}
+
+
 {% block app %}
     Создание номенклатуры
 {% endblock %}
 
 {% block content %}
     <span class="text">
-        <form method="post" action="/goods/create/product/">
+        <form method="post">
             {% csrf_token %}
             {{ form }}
             <br>
-            <input style="width: 100%;margin-top:10px;" type="submit" value="Создать">
+            <input style="width: 100%; margin-top:10px;" type="submit" value="Создать">
         </form>
     </span>
 {% endblock %}

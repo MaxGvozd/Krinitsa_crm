@@ -1,0 +1,27 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Product
+{% endblock %}
+
+{% block app %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <form method="post">
+            {% csrf_token %}
+            <label>Наименование</label>
+            <input type="text" value="{{ product.name }}">
+            <label>Наименование</label>
+            <input type="text" value="{{ product.volume }}">
+            <label>Цена</label>
+            <input type="text" value="{{ product.price }}">
+            <label>Остаток</label>
+            <input type="text" value="{{ product.stock }}">
+            <br>
+            <input style="width: 100%; margin-top:10px;" type="submit" value="Создать">
+        </form>
+    </span>
+{% endblock %}

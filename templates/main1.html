@@ -36,29 +36,37 @@
             <img src="{% static 'img/Logo_Kriniza.jpg' %}"/>
         {% endif %}
         <h2>{{user.first_name}} {{ user.last_name }}</h2>
+
+        <br>
+
+        <form method="get" action=
+                {% block search %}
+
+                    {% endblock %}
+        >
+            <input type="search" name="q" placeholder="Поиск">
+        </form>
+
     </header>
     <ul>
         {% if user.role == 'ADMIN' %}
-            <a href="/register"><li tabindex="0" class="icon-users"><span>Пользователи</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-banks"><span>Банки</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-currency"><span>Валюты</span></li></a>
-            <a href="/goods"><li tabindex="0" class="icon-warehouse"><span>Склады</span></li></a>
-            <a href="/goods"><li tabindex="0" class="icon-product"><span>Номенклатура</span></li></a>
-            <a href="/goods"><li tabindex="0" class="icon-volume"><span>Виды объёма</span></li></a>
+            <a href="/users"><li tabindex="0" class="icon-users"><span>Пользователи</span></li></a>
+            <a href="/banks"><li tabindex="0" class="icon-banks"><span>Банки</span></li></a>
+            <a href="/currency"><li tabindex="0" class="icon-currency"><span>Валюты</span></li></a>
+            <a href="/warehouses"><li tabindex="0" class="icon-warehouse"><span>Склады</span></li></a>
+            <a href="/products"><li tabindex="0" class="icon-product"><span>Номенклатура</span></li></a>
+            <a href="/volume"><li tabindex="0" class="icon-volume"><span>Виды объёма</span></li></a>
             <a href="/logout"><li tabindex="0" class="icon-logout"><span>Выйти</span></li></a>
         {% elif user.role == 'LEAD' %}
-            <a href="/register"><li tabindex="0" class="icon-users"><span>Сотрудники</span></li></a>
-            <a href="/area"><li tabindex="0" class="icon-area"><span>Зоны обслуживания</span></li></a>
             <a href="/companies"><li tabindex="0" class="icon-companies"><span>Контрагенты</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-contracts"><span>Договора</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-outlets"><span>Торговые точки</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-contacts"><span>Контактные лица</span></li></a>
+            <a href="/accounts"><li tabindex="0" class="icon-companies"><span>Номера счетов в банках</span></li></a>
+            <a href="/contracts"><li tabindex="0" class="icon-contracts"><span>Договора</span></li></a>
+            <a href="/outlets"><li tabindex="0" class="icon-outlets"><span>Торговые точки</span></li></a>
+            <a href="/contacts"><li tabindex="0" class="icon-contacts"><span>Контактные лица</span></li></a>
             <a href="/logout"><li tabindex="0" class="icon-logout"><span>Выйти</span></li></a>
         {% else %}
             <a href="/sale"><li tabindex="0" class="icon-sale"><span>Продажа</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-companies"><span>Контрагенты</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-outlets"><span>Торговые точки</span></li></a>
-            <a href="/companies"><li tabindex="0" class="icon-users"><span>Контактные лица</span></li></a>
+            <a href="/contacts"><li tabindex="0" class="icon-users"><span>Контактные лица</span></li></a>
             <a href="/logout"><li tabindex="0" class="icon-logout"><span>Выйти</span></li></a>
         {% endif %}
     </ul>
@@ -73,7 +81,7 @@
             {% block content %}
                 <span class="text">
 
-                    Breakpoints on 900px and 400px
+
 
                 </span>
             {% endblock %}

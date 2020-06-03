@@ -5,11 +5,53 @@
 {% endblock %}
 
 {% block app %}
-    Sale
+    Продажа
 {% endblock %}
 
 {% block content %}
-    <span class="text">
-        Сюда текст
+    <!--<span class="text">
+        <form method="post">
+            {% csrf_token %}
+            <br>
+            <p><input id="{{ company.name  }}" list="companies" name="company"></p>
+
+            <datalist id="companies">
+                {% for company in companies %}
+                <option>{{ company.name  }} | {{ company.contract }} | {{ company.upn }}</option>
+                {% endfor %}
+            </datalist>
+
+            <p><input id="{{ outlet.name  }}" list="outlets" name="outlet"></p>
+            <datalist id="outlets">
+
+                {% for outlet in outlets %}
+                    <option>{{ outlet.name  }} | {{ outlet.company }} | {{ outlet.address }}</option>
+                {% endfor %}
+            </datalist>
+
+            <p><input id="{{ warehouse.name  }}" list="warehouses" name="warehouse" value="{{ warehouse.id }}"> </p>
+            <datalist id="warehouses">
+
+                {% for warehouse in warehouses %}
+                    <option>{{ warehouse.name  }}</option>
+                {% endfor %}
+            </datalist>
+
+            <p><input id="{{ product.name  }}" list="products" name="product"></p>
+
+            <datalist id="products">
+                {% for product in products %}
+                <option>{{ product.name  }} | {{ product.volume }} | {{ product.price }}</option>
+                {% endfor %}
+            </datalist>-->
+
+            <span class="text">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input style="width: 100%; margin-top:10px;" type="submit" value="Создать">
+        </form>
+    </span>
     </span>
 {% endblock %}

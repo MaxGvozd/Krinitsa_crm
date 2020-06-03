@@ -1,0 +1,28 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Products
+{% endblock %}
+
+{% block app %}
+    Номенклатура
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Вид объёма</th>
+            </tr>
+        {% for product in products_list %}
+            <tr>
+                 <td><a href="/products/{{ product.id }}">{{ product.name }}</a></td>
+                <td>{{ product.volume }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

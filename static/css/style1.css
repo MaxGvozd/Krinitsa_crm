@@ -14,15 +14,13 @@ main{
 .helper{
 		background:rgba(0,0,0,0.2);
 		color:#821c1a;
-		position:absolute;
-		top:50%;
-		left:50%;
-		transform:translate3d(-50%,-50%,0);
-		padding:1.2em 2em;
+
+		padding:1.2em 1em;
 		text-align:center;
 		border-radius:20px;
 		font-size:2em;
 		font-weight:bold;
+
 }
 
 ul>a{
@@ -358,3 +356,67 @@ ul{
 .icon-logout:focus{
 	outline:none;
 }
+
+table{
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+border-radius: 10px;
+border-spacing: 0;
+text-align: center;
+}
+th {
+background: #821c1a;
+color: #ffea92;
+padding: 10px 20px;
+}
+th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: white;
+}
+th:first-child, td:first-child {
+text-align: left;
+}
+th:first-child {
+border-top-left-radius: 10px;
+}
+th:last-child {
+border-top-right-radius: 10px;
+border-right: none;
+}
+td {
+padding: 5px 5px;
+background: #e0e0e0;
+}
+tr:last-child td:first-child {
+border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+border-right: none;
+}
+
+.toolbar{
+  padding:0em 0em 0em 1em;;
+  font-size:1.5em;
+  text-align: left;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  background-image:width="189" height="255";
+}
+
+.toolbar:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.toolbar:focus{
+	outline:none;
+}
+a{
+  text-decoration: none;
+  color: black;
+  outline: none;
+}
+

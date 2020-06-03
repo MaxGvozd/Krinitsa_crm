@@ -1,23 +1,17 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from krinitsa.utils import ROLES
-from sales.models import Service_area
 
 
 class User(AbstractUser):
     telephone = models.CharField(
         max_length=10,
-        null=True
+        null=True,
+        blank=True
     )
     role = models.CharField(
         max_length=50,
         choices=ROLES
-    )
-    service_area = models.ForeignKey(
-        Service_area,
-        on_delete=models.DO_NOTHING,
-        blank=True,
-        null=True,
     )
 
     class Meta:

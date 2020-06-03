@@ -1,0 +1,36 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Contact persons
+{% endblock %}
+
+
+{% block search %}
+        "/contacts"
+{% endblock %}
+
+
+{% block app %}
+    Контактные лица
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Дата рождения</th>
+            </tr>
+        {% for contact in contacts_list %}
+            <tr>
+                <td>{{ contact.first_name }}</td>
+                <td>{{ contact.last_name }}</td>
+                <td>{{ contact.birthday }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

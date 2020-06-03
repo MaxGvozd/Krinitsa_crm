@@ -4,17 +4,23 @@
     Create user
 {% endblock %}
 
+
+{% block search %}
+        "/users"
+{% endblock %}
+
+
 {% block app %}
     Создание пользователя
 {% endblock %}
 
 {% block content %}
     <span class="text">
-        <form method="POST" action="/register/">
+        <form method="POST">
             {% csrf_token %}
             {{ form }}
             <br>
-            <input style="width: 100%;margin-top:10px;" type="submit" value="Создать">
+            <input style="width: 100%; margin-top:10px;" type="submit" value="Создать">
         </form>
     </span>
 {% endblock %}

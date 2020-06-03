@@ -1,0 +1,40 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Outlets
+{% endblock %}
+
+{% block search %}
+        "/outlets"
+{% endblock %}
+
+{% block app %}
+    Торговые точки
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Контрагент</th>
+                <th>Адрес</th>
+                <th>Котактное лицо</th>
+                <th>Номер телефона</th>
+                <th>Email</th>
+            </tr>
+        {% for outlet in outlets_list %}
+            <tr>
+                <td>{{ outlet.name }}</td>
+                <td>{{ outlet.company }}</td>
+                <td>{{ outlet.address }}</td>
+                <td>{{ outlet.contact }}</td>
+                <td>{{ outlet.telephone }}</td>
+                <td>{{ outlet.email }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

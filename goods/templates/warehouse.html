@@ -4,17 +4,21 @@
     Create warehouse
 {% endblock %}
 
+{% block search %}
+        "/warehouses"
+{% endblock %}
+
 {% block app %}
     Создание склада
 {% endblock %}
 
 {% block content %}
     <span class="text">
-        <form method="post" action="/goods/create/warehouse/">
+        <form method="post">
             {% csrf_token %}
             {{ form }}
             <br>
-            <input style="width: 100%;margin-top:10px;" type="submit" value="Создать">
+            <input style="width: 100%; margin-top:10px;" type="submit" value="Создать">
         </form>
     </span>
 {% endblock %}

@@ -2,8 +2,12 @@ from django.urls import path
 from goods import views
 
 urlpatterns = [
-    #path('goods/', views.goods),
-    path('create/product/', views.create_product),
-    path('create/volume/', views.create_volume),
-    path('create/warehouse/', views.create_warehouse),
+    path('volume/', views.volume),
+    path('warehouses/', views.warehouses),
+    path('warehouses/create/', views.create_warehouse),
+    path('products/create/', views.create_product),
+    path('volume/create/', views.create_volume),
+    path('products/', views.products),
+    path('products/<int:id>', views.retrieve)
+
 ]

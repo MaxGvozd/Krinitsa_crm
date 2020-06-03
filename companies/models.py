@@ -1,5 +1,4 @@
 from django.db import models
-from sales.models import Service_area
 
 
 class Bank(models.Model):
@@ -155,12 +154,6 @@ class Outlet(models.Model):
     )
     email = models.EmailField(
         max_length=250,
-        null=True,
-        blank=True
-    )
-    service_area = models.ForeignKey(
-        Service_area,
-        on_delete=models.DO_NOTHING,
         null=True,
         blank=True
     )

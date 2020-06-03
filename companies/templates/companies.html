@@ -4,13 +4,19 @@
     Create contract
 {% endblock %}
 
+
+{% block search %}
+        "/companies"
+{% endblock %}
+
+
 {% block app %}
     Добавление договора
 {% endblock %}
 
 {% block content %}
     <span class="text">
-        <form method="post" action="/company/create/company">
+        <form method="post">
             {% csrf_token %}
             {{ form }}
             <br>

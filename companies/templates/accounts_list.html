@@ -1,0 +1,39 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Bank account
+{% endblock %}
+
+{% block search %}
+        "/accounts"
+{% endblock %}
+
+{% block app %}
+    Номера счетов в банках
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Номер счёта</th>
+                <th>Валюта</th>
+                <th>Наименование банка</th>
+                <th>Дата начала</th>
+                <th>Дата окончания</th>
+
+            </tr>
+        {% for account in accounts_list %}
+            <tr>
+                <td>{{ account.number }}</td>
+                <td>{{ account.currency }}</td>
+                <td>{{ account.bank }}</td>
+                <td>{{ account.start }}</td>
+                <td>{{ account.end }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

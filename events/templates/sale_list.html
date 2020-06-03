@@ -1,0 +1,42 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Sale
+{% endblock %}
+
+{% block app %}
+    Продажи
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Дата создания</th>
+                <th>Номер</th>
+                <th>Контрагент</th>
+                <th>Договор</th>
+                <th>Торговая точка</th>
+                <th>Склад</th>
+                <th>Номенклатура</th>
+                <th>Вид объёма</th>
+                <th>Срок оплаты</th>
+            </tr>
+        {% for sale in sale_list %}
+            <tr>
+                <td>{{ sale.created_on }}</td>
+                <td>{{ sale.number }}</td>
+                <td>{{ sale.company }}</td>
+                <td>{{ sale.contract }}</td>
+                <td>{{ sale.outlet }}</td>
+                <td>{{ sale.warehouse }}</td>
+                <td>{{ sale.product }}</td>
+                <td>{{ sale.volume }}</td>
+                <td>{{ sale.due_date }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

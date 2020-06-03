@@ -1,0 +1,34 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Сontracts
+{% endblock %}
+
+{% block app %}
+    Договора
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Номер</th>
+                <th>Дата начала действия</th>
+                <th>Конец действия</th>
+                <th>Дней оплаты</th>
+            </tr>
+        {% for contract in contracts_list %}
+            <tr>
+                <td>{{ contract.name }}</td>
+                <td>{{ contract.number }}</td>
+                <td>{{ contract.start }}</td>
+                <td>{{ contract.end }}</td>
+                <td>{{ contract.due_date_payment }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

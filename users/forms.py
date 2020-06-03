@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.hashers import make_password
 
-from sales.models import Service_area
 from users.models import User
 
 
@@ -21,8 +20,7 @@ class RegistrationForm(forms.ModelForm):
             'email',
             'telephone',
             'role',
-            'service_area',
-            'password',
+            'password'
         ]
         exclude = []
         widgets = {
@@ -34,7 +32,6 @@ class RegistrationForm(forms.ModelForm):
             'email': "Email адрес",
             'telephone': "Телефон",
             'role': "Статус",
-            'service_area': "Зона обслуживания",
             'password': "Пароль"
         }
         help_texts = {
@@ -42,17 +39,17 @@ class RegistrationForm(forms.ModelForm):
         }
 
     def save(self, commit=True):
-        self.cleaned_data['password'] = make_password(
+        self.instance.password = make_password(
             self.cleaned_data['password']
         )
         return super().save(self)
 
     def clean(self):
-        password = self.data['password']
-        password_confirm = self.data['password_confirm']
+        password = self.cleaned_data['password']
+        password_confirm = self.cleaned_data['password_confirm']
         if password != password_confirm:
             raise forms.ValidationError("Пароли не совпадают")
-        return self.data
+        return self.cleaned_data
 
     def clean_telephone(self):
         telephone = self.data['telephone']

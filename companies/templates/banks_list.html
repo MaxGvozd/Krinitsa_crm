@@ -1,0 +1,32 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    Banks
+{% endblock %}
+
+{% block search %}
+        "/banks"
+{% endblock %}
+
+{% block app %}
+    Банки
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Адрес</th>
+            </tr>
+        {% for bank in banks_list %}
+            <tr>
+                <td>{{ bank.name }}</td>
+                <td>{{ bank.address }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}

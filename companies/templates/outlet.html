@@ -10,7 +10,7 @@
 
 {% block content %}
     <span class="text">
-        <form method="post" action="/company/create/outlet/">
+        <form method="post">
             {% csrf_token %}
             {{ form }}
             <br>

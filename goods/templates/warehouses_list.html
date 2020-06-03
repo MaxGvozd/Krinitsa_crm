@@ -1,0 +1,26 @@
+{% extends 'main1.html' %}
+
+{% block title %}
+    warehouse
+{% endblock %}
+
+{% block app %}
+    Склады хранения
+{% endblock %}
+
+{% block content %}
+    <span class="text">
+        <p style="text-align: left;" ><a href="create/">Добавить</a></p>
+        <br>
+        <table>
+            <tr>
+                <th>Наименование</th>
+            </tr>
+        {% for warehouse in warehouses_list %}
+            <tr>
+                <td>{{ warehouse.name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </span>
+{% endblock %}
